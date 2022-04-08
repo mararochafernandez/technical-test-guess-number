@@ -6,7 +6,7 @@ import Form from './Form';
 import Footer from './Footer';
 
 function App() {
-  const [number, setNumber] = useState(ls.get('number', 0));
+  const [number, setNumber] = useState(ls.get('number', ''));
 
   // local storage
 
@@ -21,10 +21,28 @@ function App() {
   };
 
   const handleButton = () => {
-    console.log('guess number');
+    if (!isNaN(number) && number >= 1 && number <= 10000000000) {
+      console.log('guess number');
+      guessNumber(number);
+    } else {
+      console.error('invalid number');
+    }
   };
 
-  console.log(number);
+  // helpers
+
+  const guessNumber = (number) => {
+    /*
+    for (let i = 1; i <= 10000000000; i++) {
+      if (i === number) {
+        console.log(`the entered value is ${number}`);
+        break;
+      }
+    }
+    */
+
+    console.log('the entered value is ' + number);
+  };
 
   return (
     <div className="page">
@@ -48,3 +66,4 @@ function App() {
 }
 
 export default App;
+

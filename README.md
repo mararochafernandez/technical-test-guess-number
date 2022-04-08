@@ -32,15 +32,15 @@ La aplicación está hecha en JavaScript usando React.
 
 ### Funcionalidades destacadas
 
-- Uso de componentes que permite la reutilización de código
-- Almacenamiento local para mejorar la experiencia de usuario
+- Usar componentes que permiten la reutilización de código
+- Guardar en almacenamiento local para mejorar la experiencia de usuario
 
 ---
 
 # React Starter Kit
 
 - Dependencias NPM: `node-sass` `react-router-dom@5.3.0` `prop-types`
-- Servicios: API y Local Storage
+- Servicios: Local Storage
 - Publicar en GitHub Pages: `npm run githubpages`
 
 ## Instalación y configuración
@@ -76,3 +76,4 @@ npm run build
 ---
 
 _Mara Rocha Fernández_
+
