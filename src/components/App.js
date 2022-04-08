@@ -22,11 +22,13 @@ function App() {
 
   const handleInput = (value) => {
     setNumber(value);
+    setSolution('');
   };
 
   const handleButton = () => {
     if (!isNaN(number) && number >= minNumber && number <= maxNumber) {
-      setSolution(guessNumber(number.length));
+      //setSolution(guessNumber(number));
+      setSolution(binarySearch(number));
     } else {
       console.error('invalid number');
     }
@@ -34,8 +36,10 @@ function App() {
 
   // helpers
 
+  /*
   // first solution
-  const guessNumber = (size) => {
+  const guessNumber = (number) => {
+    const size = number.length;
     let result = '';
 
     if (size === 11) {
@@ -51,6 +55,30 @@ function App() {
     }
 
     return result;
+  };
+  */
+
+  // second solution
+  const binarySearch = (number) => {
+    let left = minNumber;
+    let right = maxNumber;
+    let middle = 0;
+
+    while (right >= left) {
+      middle = left + Math.floor((right - left) / 2);
+
+      if (middle.toString() === number) {
+        return middle;
+      }
+
+      if (middle > number) {
+        right = middle - 1;
+      } else {
+        left = middle + 1;
+      }
+    }
+
+    return -1;
   };
 
   const renderSolution = () => {
