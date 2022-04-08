@@ -12,7 +12,8 @@ const Form = (props) => {
   return (
     <form className="form" onSubmit={handleForm}>
       <label className="form__label" htmlFor="number">
-        Enter a number between 1 and 10.000.000.000, inclusive:
+        Enter a number between {props.minNumber} and {props.maxNumber},
+        inclusive:
       </label>
 
       <input
@@ -20,8 +21,8 @@ const Form = (props) => {
         type="number"
         name="number"
         id="number"
-        min="1"
-        max="10000000000"
+        min={props.minNumber}
+        max={props.maxNumber}
         value={props.number}
         onChange={handleChange}
       />

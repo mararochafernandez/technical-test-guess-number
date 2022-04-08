@@ -29,10 +29,12 @@ La aplicación está hecha en JavaScript usando React.
 - [x] Crear componentes y estructura HTML semántica
 - [x] Crear formulario, eventos y variables de estado
 - [x] Guardar datos en almacenamiento local
+- [x] Validar número introducido
+- [ ] Buscar número introducido en un intervalo números
 
 ### Funcionalidades destacadas
 
-- Usar componentes que permiten la reutilización de código
+- Usar componentes que permitan ordenar y/o reutilizar el código
 - Guardar en almacenamiento local para mejorar la experiencia de usuario
 
 ---

@@ -7,6 +7,10 @@ import Footer from './Footer';
 
 function App() {
   const [number, setNumber] = useState(ls.get('number', ''));
+  const [solution, setSolution] = useState('');
+
+  const minNumber = 1;
+  const maxNumber = 10000000000;
 
   // local storage
 
@@ -21,9 +25,8 @@ function App() {
   };
 
   const handleButton = () => {
-    if (!isNaN(number) && number >= 1 && number <= 10000000000) {
-      console.log('guess number');
-      guessNumber(number);
+    if (!isNaN(number) && number >= minNumber && number <= maxNumber) {
+      setSolution(guessNumber(number.length));
     } else {
       console.error('invalid number');
     }
@@ -31,17 +34,27 @@ function App() {
 
   // helpers
 
-  const guessNumber = (number) => {
-    /*
-    for (let i = 1; i <= 10000000000; i++) {
-      if (i === number) {
-        console.log(`the entered value is ${number}`);
-        break;
+  // first solution
+  const guessNumber = (size) => {
+    let result = '';
+
+    if (size === 11) {
+      result = maxNumber.toString();
+    } else {
+      for (let i = 0; i < size; i++) {
+        for (let j = 0; j <= 9; j++) {
+          if (j.toString() === number[i]) {
+            result += j.toString();
+          }
+        }
       }
     }
-    */
 
-    console.log('the entered value is ' + number);
+    return result;
+  };
+
+  const renderSolution = () => {
+    return solution !== '' ? <p>The entered number is: {solution}</p> : null;
   };
 
   return (
@@ -55,7 +68,11 @@ function App() {
               number={number}
               handleInput={handleInput}
               handleButton={handleButton}
+              minNumber={minNumber}
+              maxNumber={maxNumber}
             />
+
+            {renderSolution()}
           </div>
         </div>
       </main>
