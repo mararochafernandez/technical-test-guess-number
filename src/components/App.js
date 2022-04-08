@@ -1,72 +1,50 @@
 import '../styles/App.scss';
-//import { useEffect, useState } from 'react';
-//import callToApi from '../services/api';
-//import ls from '../services/localstorage';
-//import { Link, Route, Switch, useRouteMatch } from 'react-router-dom';
-//import PropTypes from 'prop-types';
+import { useEffect, useState } from 'react';
+import ls from '../services/localstorage';
+import Header from './Header';
+import Form from './Form';
+import Footer from './Footer';
 
 function App() {
-  /* Let's do magic! 🦄🦄🦄 */
-
-  // api
-
-  //const [data, setData] = useState([]);
-
-  /*
-  useEffect(() => {
-    callToApi().then((dataFromApi) => {
-      setData(dataFromApi);
-    });
-  }, []);
-  */
+  const [number, setNumber] = useState(ls.get('number', 0));
 
   // local storage
 
-  //const [name, setName] = useState(ls.get('name', ''));
-  //const [email, setEmail] = useState(ls.get('email', ''));
-
-  //useState(ls.get('data', {}).name || '');
-  //useState(ls.get('data', {}).email || '');
-
-  /*
   useEffect(() => {
-    ls.set('name', name);
-    ls.set('email', email);
-  }, [name, email]);
-  */
+    ls.set('number', number);
+  }, [number]);
 
-  /*
-  useEffect(() => {
-    ls.set('data', {
-      name: name,
-      email: email,
-    });
-  }, [name, email]);
-  */
+  // event handlers
+
+  const handleInput = (value) => {
+    setNumber(value);
+  };
+
+  const handleButton = () => {
+    console.log('guess number');
+  };
+
+  console.log(number);
 
   return (
-    // HTML ✨
+    <div className="page">
+      <Header title="Guess Number" />
 
-    <div>Happy coding!</div>
+      <main className="main">
+        <div className="main__container">
+          <div className="main__wrapper">
+            <Form
+              number={number}
+              handleInput={handleInput}
+              handleButton={handleButton}
+            />
+          </div>
+        </div>
+      </main>
+
+      <Footer />
+    </div>
   );
 }
-
-// default props
-
-/*
-NombreDelComponente.defaultProps = {
-  nombreDeLaProp1: 'valorPorDefectoDeLaProp1',
-  nombreDeLaProp2: 'valorPorDefectoDeLaProp2',
-};
-*/
-
-// prop types
-
-/*
-NombreDeMiComponente.propTypes = {
-  nombreDeMiPropDeTipoStringOpcional: PropTypes.string,
-  nombreDeMiPropDeTipoStringObligatoria: PropTypes.string.isRequired
-}
-*/
 
 export default App;

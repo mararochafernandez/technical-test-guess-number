@@ -2,7 +2,7 @@
 
 ## Requisitos del ejercicio
 
-Crear una una aplicación web con un formulario en el que se pueda introducir un número entre 1 y 10000000000 y que al enviar dicho formulario la aplicación tendrá que "adivinar" el número que se ha introducido cumpliendo las siguientes reglas:
+Crear una aplicación web con un formulario en el que se pueda introducir un número entre 1 y 10000000000 y que al enviar dicho formulario la aplicación tendrá que "adivinar" el número que se ha introducido cumpliendo las siguientes reglas:
 
 - El valor introducido se almacenará en una variable. No se modificará ni copiará ni clonará para devolver el valor introducido.
 - La aplicación hará una comprobación matemática con otros números para poder adivinar el resultado final (ver ejemplo).
@@ -25,7 +25,15 @@ La aplicación está hecha en JavaScript usando React.
 
 ### Implementaciones
 
-- [ ] Crear proyecto con React Starter Kit
+- [x] Crear proyecto con React Starter Kit
+- [x] Crear componentes y estructura HTML semántica
+- [x] Crear formulario, eventos y variables de estado
+- [x] Guardar datos en almacenamiento local
+
+### Funcionalidades destacadas
+
+- Uso de componentes que permite la reutilización de código
+- Almacenamiento local para mejorar la experiencia de usuario
 
 ---
 
@@ -37,7 +45,7 @@ La aplicación está hecha en JavaScript usando React.
 
 ## Instalación y configuración
 
-Requisitos: necesitas `node` and `npm` instalados en tu equipo.
+Requisitos: se necesitan `node` y `npm` instalados en el equipo.
 
 ### Clonar el repositorio
 
@@ -51,7 +59,7 @@ git clone URL
 npm install
 ```
 
-### Ejecutar la aplicación
+### Ejecutar la aplicación en entorno de desarrollo
 
 ```
 npm start
@@ -67,5 +75,4 @@ npm run build
 
 ---
 
-_Happy coding!_
-
+_Mara Rocha Fernández_
