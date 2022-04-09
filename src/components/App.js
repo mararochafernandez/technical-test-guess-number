@@ -7,7 +7,9 @@ import Form from './Form';
 import Footer from './Footer';
 
 function App() {
-  const [number, setNumber] = useState(localStorage.get('number', ''));
+  const [inputNumber, setInputNumber] = useState(
+    localStorage.get('number', '')
+  );
   const [solution, setSolution] = useState('');
 
   const minNumber = 1;
@@ -16,18 +18,22 @@ function App() {
   // local storage
 
   useEffect(() => {
-    localStorage.set('number', number);
-  }, [number]);
+    localStorage.set('number', inputNumber);
+  }, [inputNumber]);
 
   // event handlers
 
   const handleInput = (value) => {
-    setNumber(value);
+    setInputNumber(value);
     setSolution('');
   };
 
   const handleButton = () => {
-    if (!isNaN(number) && number >= minNumber && number <= maxNumber) {
+    if (
+      !isNaN(inputNumber) &&
+      inputNumber >= minNumber &&
+      inputNumber <= maxNumber
+    ) {
       guessNumber();
     } else {
       console.error('Invalid number');
@@ -37,7 +43,7 @@ function App() {
   // helpers
 
   const guessNumber = () => {
-    let result = binarySearch(minNumber, maxNumber, number);
+    let result = binarySearch(minNumber, maxNumber, inputNumber);
 
     if (result === -1) {
       console.error('Entered number is not found');
@@ -61,7 +67,7 @@ function App() {
             <Form
               minNumber={minNumber}
               maxNumber={maxNumber}
-              number={number}
+              inputNumber={inputNumber}
               handleInput={handleInput}
               handleButton={handleButton}
             />

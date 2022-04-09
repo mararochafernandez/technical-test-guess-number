@@ -28,7 +28,7 @@ const Form = (props) => {
         id="number"
         min={props.minNumber}
         max={props.maxNumber}
-        value={props.number}
+        value={props.inputNumber}
         onChange={handleChange}
       />
 
@@ -46,13 +46,13 @@ const Form = (props) => {
 Form.defaultProps = {
   minNumber: 1,
   maxNumber: 10000000000,
-  number: '',
+  inputNumber: '',
 };
 
 Form.propTypes = {
   minNumber: propTypes.number,
   maxNumber: propTypes.number,
-  number: propTypes.string,
+  inputNumber: propTypes.string,
   handleInput: propTypes.func.isRequired,
   handleButton: propTypes.func.isRequired,
 };

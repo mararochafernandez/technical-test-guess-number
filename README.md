@@ -32,7 +32,7 @@ La aplicación está hecha en JavaScript usando React.
 - [x] Guardar datos en almacenamiento local.
 - [x] Implementar funcionalidad de búsqueda eficiente.
 - [x] Añadir prop types y default props.
-- [ ] Crear tests unitarios con Jest y Testing Library.
+- [x] Crear tests unitarios con Jest y Testing Library.
 - [ ] Añadir estilos CSS y maquetación responsive.
 - [ ] Limpiar código y refactorizar.
 
@@ -41,8 +41,9 @@ La aplicación está hecha en JavaScript usando React.
 - Usar componentes que permitan ordenar y/o reutilizar el código.
 - Aplicar características propias de React: lifting, hooks de estado y efecto, prop types y default props.
 - Guardar información del formulario en almacenamiento local para mejorar la experiencia de usuario.
-- Validar los campos del formulario.
-- Buscar número introducido en un intervalo de números, mediente un algoritmo de búsqueda binaria, según el principio de divide y vencerás.
+- Validar campos del formulario.
+- Buscar número introducido en un intervalo de números, mediante un algoritmo de búsqueda binaria, según el principio de divide y vencerás.
+- Implementar test unitarios.
 
 ---
 
