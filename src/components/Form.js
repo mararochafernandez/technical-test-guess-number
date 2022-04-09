@@ -50,11 +50,11 @@ Form.defaultProps = {
 };
 
 Form.propTypes = {
-  minNumber: propTypes.string,
-  maxNumber: propTypes.string,
+  minNumber: propTypes.number,
+  maxNumber: propTypes.number,
   number: propTypes.string,
-  handleChange: propTypes.func.isRequired,
-  handleClick: propTypes.func.isRequired,
+  handleInput: propTypes.func.isRequired,
+  handleButton: propTypes.func.isRequired,
 };
 
 export default Form;
