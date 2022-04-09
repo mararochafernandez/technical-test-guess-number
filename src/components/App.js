@@ -27,20 +27,24 @@ function App() {
 
   const handleButton = () => {
     if (!isNaN(number) && number >= minNumber && number <= maxNumber) {
-      let result = binarySearch(minNumber, maxNumber);
-
-      if (result === -1) {
-        console.error('Entered number is not found');
-      } else {
-        setSolution(result);
-        console.log('Entered number is found');
-      }
+      guessNumber();
     } else {
       console.error('Invalid number');
     }
   };
 
   // helpers
+
+  const guessNumber = () => {
+    let result = binarySearch(minNumber, maxNumber);
+
+    if (result === -1) {
+      console.error('Entered number is not found');
+    } else {
+      setSolution(result);
+      console.log('Entered number is found');
+    }
+  };
 
   const binarySearch = (left, right) => {
     if (right >= left) {
@@ -72,11 +76,11 @@ function App() {
         <div className="main__container">
           <div className="main__wrapper">
             <Form
+              minNumber={minNumber}
+              maxNumber={maxNumber}
               number={number}
               handleInput={handleInput}
               handleButton={handleButton}
-              minNumber={minNumber}
-              maxNumber={maxNumber}
             />
 
             {renderSolution()}
@@ -84,7 +88,7 @@ function App() {
         </div>
       </main>
 
-      <Footer />
+      <Footer copy="2022 Mara Rocha" />
     </div>
   );
 }

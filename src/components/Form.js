@@ -42,4 +42,10 @@ const Form = (props) => {
   );
 };
 
+Form.defaultProps = {
+  minNumber: 1,
+  maxNumber: 10000000000,
+  number: '',
+};
+
 export default Form;

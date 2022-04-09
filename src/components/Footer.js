@@ -1,12 +1,12 @@
 import '../styles/Footer.scss';
 import FooterLink from './FooterLink';
 
-const Footer = () => {
+const Footer = (props) => {
   return (
     <footer className="footer">
       <div className="footer__container">
         <div className="footer__wrapper">
-          <p className="footer__copy">&copy; 2022 Mara Rocha</p>
+          <p className="footer__copy">&copy; {props.copy}</p>
           <ul className="footer__menu">
             <FooterLink
               name="Instagram"
@@ -36,6 +36,10 @@ const Footer = () => {
       </div>
     </footer>
   );
+};
+
+Footer.defaultProps = {
+  copy: 'Copyright',
 };
 
 export default Footer;
