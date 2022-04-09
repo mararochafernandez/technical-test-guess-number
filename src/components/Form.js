@@ -1,3 +1,4 @@
+import propTypes from 'prop-types';
 import '../styles/Form.scss';
 
 const Form = (props) => {
@@ -46,6 +47,14 @@ Form.defaultProps = {
   minNumber: 1,
   maxNumber: 10000000000,
   number: '',
+};
+
+Form.propTypes = {
+  minNumber: propTypes.string,
+  maxNumber: propTypes.string,
+  number: propTypes.string,
+  handleChange: propTypes.func.isRequired,
+  handleClick: propTypes.func.isRequired,
 };
 
 export default Form;

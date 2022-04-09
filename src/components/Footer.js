@@ -1,3 +1,4 @@
+import propTypes from 'prop-types';
 import '../styles/Footer.scss';
 import FooterLink from './FooterLink';
 
@@ -40,6 +41,10 @@ const Footer = (props) => {
 
 Footer.defaultProps = {
   copy: 'Copyright',
+};
+
+Footer.propTypes = {
+  copy: propTypes.string,
 };
 
 export default Footer;

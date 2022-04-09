@@ -1,3 +1,4 @@
+import propTypes from 'prop-types';
 import '../styles/Header.scss';
 
 const Header = (props) => {
@@ -14,6 +15,10 @@ const Header = (props) => {
 
 Header.defaultProps = {
   title: 'Título',
+};
+
+Header.propTypes = {
+  title: propTypes.string,
 };
 
 export default Header;
