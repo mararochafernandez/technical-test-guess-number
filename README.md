@@ -25,17 +25,22 @@ La aplicación está hecha en JavaScript usando React.
 
 ### Implementaciones
 
-- [x] Crear proyecto con React Starter Kit
-- [x] Crear componentes y estructura HTML semántica
-- [x] Crear formulario, eventos y variables de estado
-- [x] Guardar datos en almacenamiento local
-- [x] Validar número introducido
-- [ ] Buscar número introducido en un intervalo números
+- [x] Crear proyecto con React Starter Kit.
+- [x] Crear componentes y estructura HTML semántica.
+- [x] Crear formulario, eventos y variables de estado.
+- [x] Guardar datos en almacenamiento local.
+- [x] Implementar funcionalidad de búsqueda eficiente.
+- [ ] Crear tests unitarios con Jest.
+- [ ] Añadir prop types y default props.
+- [ ] Añadir estilos CSS.
+- [ ] Limpiar código y refactorizar.
 
 ### Funcionalidades destacadas
 
-- Usar componentes que permitan ordenar y/o reutilizar el código
-- Guardar en almacenamiento local para mejorar la experiencia de usuario
+- Usar componentes que permitan ordenar y/o reutilizar el código.
+- Guardar en almacenamiento local para mejorar la experiencia de usuario.
+- Validar número introducido.
+- Buscar número introducido en un intervalo de números, mediente un algoritmo de búsqueda binaria, según el principio de divide y vencerás.
 
 ---
 

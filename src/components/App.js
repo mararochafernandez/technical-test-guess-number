@@ -27,55 +27,34 @@ function App() {
 
   const handleButton = () => {
     if (!isNaN(number) && number >= minNumber && number <= maxNumber) {
-      //setSolution(guessNumber(number));
-      setSolution(binarySearch(number));
+      let result = binarySearch(minNumber, maxNumber);
+
+      if (result === -1) {
+        console.error('Entered number is not found');
+      } else {
+        setSolution(result);
+        console.log('Entered number is found');
+      }
     } else {
-      console.error('invalid number');
+      console.error('Invalid number');
     }
   };
 
   // helpers
 
-  /*
-  // first solution
-  const guessNumber = (number) => {
-    const size = number.length;
-    let result = '';
-
-    if (size === 11) {
-      result = maxNumber.toString();
-    } else {
-      for (let i = 0; i < size; i++) {
-        for (let j = 0; j <= 9; j++) {
-          if (j.toString() === number[i]) {
-            result += j.toString();
-          }
-        }
-      }
-    }
-
-    return result;
-  };
-  */
-
-  // second solution
-  const binarySearch = (number) => {
-    let left = minNumber;
-    let right = maxNumber;
-    let middle = 0;
-
-    while (right >= left) {
-      middle = left + Math.floor((right - left) / 2);
+  const binarySearch = (left, right) => {
+    if (right >= left) {
+      let middle = left + Math.floor((right - left) / 2);
 
       if (middle.toString() === number) {
         return middle;
       }
 
       if (middle > number) {
-        right = middle - 1;
-      } else {
-        left = middle + 1;
+        return binarySearch(left, middle - 1);
       }
+
+      return binarySearch(middle + 1, right);
     }
 
     return -1;

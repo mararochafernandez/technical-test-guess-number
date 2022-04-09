@@ -9,6 +9,10 @@ const Form = (props) => {
     props.handleInput(event.currentTarget.value);
   };
 
+  const handleClick = () => {
+    props.handleButton();
+  };
+
   return (
     <form className="form" onSubmit={handleForm}>
       <label className="form__label" htmlFor="number">
@@ -30,7 +34,7 @@ const Form = (props) => {
       <button
         className="form__button"
         title="Guess number"
-        onClick={props.handleButton}
+        onClick={handleClick}
       >
         Guess number
       </button>
