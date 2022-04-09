@@ -1,12 +1,13 @@
 import '../styles/App.scss';
 import { useEffect, useState } from 'react';
-import ls from '../services/localstorage';
+import localStorage from '../services/local-storage';
+import binarySearch from '../services/binary-search';
 import Header from './Header';
 import Form from './Form';
 import Footer from './Footer';
 
 function App() {
-  const [number, setNumber] = useState(ls.get('number', ''));
+  const [number, setNumber] = useState(localStorage.get('number', ''));
   const [solution, setSolution] = useState('');
 
   const minNumber = 1;
@@ -15,7 +16,7 @@ function App() {
   // local storage
 
   useEffect(() => {
-    ls.set('number', number);
+    localStorage.set('number', number);
   }, [number]);
 
   // event handlers
@@ -36,7 +37,7 @@ function App() {
   // helpers
 
   const guessNumber = () => {
-    let result = binarySearch(minNumber, maxNumber);
+    let result = binarySearch(minNumber, maxNumber, number);
 
     if (result === -1) {
       console.error('Entered number is not found');
@@ -44,24 +45,6 @@ function App() {
       setSolution(result);
       console.log('Entered number is found');
     }
-  };
-
-  const binarySearch = (left, right) => {
-    if (right >= left) {
-      let middle = left + Math.floor((right - left) / 2);
-
-      if (middle.toString() === number) {
-        return middle;
-      }
-
-      if (middle > number) {
-        return binarySearch(left, middle - 1);
-      }
-
-      return binarySearch(middle + 1, right);
-    }
-
-    return -1;
   };
 
   const renderSolution = () => {
