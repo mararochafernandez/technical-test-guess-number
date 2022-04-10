@@ -1,5 +1,4 @@
 import propTypes from 'prop-types';
-import '../styles/Form.scss';
 
 const Form = (props) => {
   const handleForm = (event) => {
@@ -15,30 +14,33 @@ const Form = (props) => {
   };
 
   return (
-    <form className="form" onSubmit={handleForm}>
-      <label className="form__label" htmlFor="number">
-        Enter a number between {props.minNumber} and {props.maxNumber},
+    <form className="p-0" onSubmit={handleForm}>
+      <label className="mb-2" htmlFor="number">
+        Enter an integer between {props.minNumber} and {props.maxNumber},
         inclusive:
       </label>
 
-      <input
-        className="form__input"
-        type="number"
-        name="number"
-        id="number"
-        min={props.minNumber}
-        max={props.maxNumber}
-        value={props.inputNumber}
-        onChange={handleChange}
-      />
+      <div className="input-group m-0">
+        <input
+          className="form-control"
+          type="number"
+          name="number"
+          id="number"
+          min={props.minNumber}
+          max={props.maxNumber}
+          value={props.inputNumber}
+          onChange={handleChange}
+        />
 
-      <button
-        className="form__button"
-        title="Guess number"
-        onClick={handleClick}
-      >
-        Guess number
-      </button>
+        <button
+          className="btn btn-outline-dark"
+          type="button"
+          title="Guess number"
+          onClick={handleClick}
+        >
+          Guess number
+        </button>
+      </div>
     </form>
   );
 };

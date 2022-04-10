@@ -33,8 +33,9 @@ La aplicación está hecha en JavaScript usando React.
 - [x] Implementar funcionalidad de búsqueda eficiente.
 - [x] Añadir prop types y default props.
 - [x] Crear tests unitarios con Jest y Testing Library.
-- [ ] Añadir estilos CSS y maquetación responsive.
-- [ ] Limpiar código y refactorizar.
+- [x] Instalar dependencia de Bootstrap y aplicar estilos CSS.
+- [x] Limpiar código y refactorizar.
+- [x] Publicar proyecto de GitHub Pages.
 
 ### Funcionalidades destacadas
 
@@ -42,16 +43,9 @@ La aplicación está hecha en JavaScript usando React.
 - Aplicar características propias de React: lifting, hooks de estado y efecto, prop types y default props.
 - Guardar información del formulario en almacenamiento local para mejorar la experiencia de usuario.
 - Validar campos del formulario.
-- Buscar número introducido en un intervalo de números, mediante un algoritmo de búsqueda binaria, según el principio de divide y vencerás.
+- Buscar número entero introducido en un intervalo, mediante un algoritmo de búsqueda binaria de tipo recursivo, según el principio divide y vencerás.
 - Implementar test unitarios.
-
----
-
-# React Starter Kit
-
-- Dependencias NPM: `node-sass` `react-router-dom@5.3.0` `prop-types`
-- Servicios: Local Storage
-- Publicar en GitHub Pages: `npm run githubpages`
+- Aplicar maquetación responsive para garantizar una correcta visualización en dispositivos pequeños.
 
 ## Instalación y configuración
 
@@ -88,6 +82,14 @@ npm run build
 ```
 npm test
 ```
+
+### Publicar en GitHub Pages
+
+```
+npm run githubpages
+```
+
+Ir a [http://localhost:3000](http://localhost:3000) para ver la aplicación en funcionamiento.
 
 ---
 

@@ -1,14 +1,14 @@
 import propTypes from 'prop-types';
-import '../styles/Footer.scss';
 import FooterLink from './FooterLink';
 
 const Footer = (props) => {
   return (
-    <footer className="footer">
-      <div className="footer__container">
-        <div className="footer__wrapper">
-          <p className="footer__copy">&copy; {props.copy}</p>
-          <ul className="footer__menu">
+    <footer className="container my-5 p-0">
+      <nav className="navbar navbar-expand navbar-light bg-light rounded">
+        <div className="container-fluid px-5 py-2">
+          <span className="navbar-text">&copy; {props.copy}</span>
+
+          <ul className="navbar-nav">
             <FooterLink
               name="Instagram"
               url="https://www.instagram.com/maranhaknits"
@@ -34,7 +34,7 @@ const Footer = (props) => {
             />
           </ul>
         </div>
-      </div>
+      </nav>
     </footer>
   );
 };

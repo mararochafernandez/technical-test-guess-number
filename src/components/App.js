@@ -11,6 +11,7 @@ function App() {
     localStorage.get('number', '')
   );
   const [solution, setSolution] = useState('');
+  const [error, setError] = useState('');
 
   const minNumber = 1;
   const maxNumber = 10000000000;
@@ -26,6 +27,7 @@ function App() {
   const handleInput = (value) => {
     setInputNumber(value);
     setSolution('');
+    setError('');
   };
 
   const handleButton = () => {
@@ -36,7 +38,7 @@ function App() {
     ) {
       guessNumber();
     } else {
-      console.error('Invalid number');
+      setError('Invalid number');
     }
   };
 
@@ -46,36 +48,44 @@ function App() {
     let result = binarySearch(minNumber, maxNumber, inputNumber);
 
     if (result === -1) {
-      console.error('Entered number is not found');
+      setError('Number not found');
     } else {
       setSolution(result);
-      console.log('Entered number is found');
     }
   };
 
   const renderSolution = () => {
-    return solution !== '' ? <p>The entered number is: {solution}</p> : null;
+    return solution !== '' ? (
+      <div className="alert alert-success mt-4">
+        The entered number is: {solution}
+      </div>
+    ) : null;
+  };
+
+  const renderError = () => {
+    return error !== '' ? (
+      <div className="alert alert-danger mt-4">{error}</div>
+    ) : null;
   };
 
   return (
-    <div className="page">
-      <Header title="Guess Number" />
+    <div className="container">
+      <div className="min-view-height">
+        <Header title="Guess Number" />
 
-      <main className="main">
-        <div className="main__container">
-          <div className="main__wrapper">
-            <Form
-              minNumber={minNumber}
-              maxNumber={maxNumber}
-              inputNumber={inputNumber}
-              handleInput={handleInput}
-              handleButton={handleButton}
-            />
+        <main className="m-5 col-lg-6">
+          <Form
+            minNumber={minNumber}
+            maxNumber={maxNumber}
+            inputNumber={inputNumber}
+            handleInput={handleInput}
+            handleButton={handleButton}
+          />
 
-            {renderSolution()}
-          </div>
-        </div>
-      </main>
+          {renderSolution()}
+          {renderError()}
+        </main>
+      </div>
 
       <Footer copy="2022 Mara Rocha" />
     </div>

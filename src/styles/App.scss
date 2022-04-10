@@ -1,0 +1,10 @@
+// Override default variables before the import
+$body-bg: #fff;
+$body-color: #000;
+
+// Import Bootstrap and its default variables
+@import '~bootstrap/scss/bootstrap.scss';
+
+.min-view-height {
+  min-height: calc(100vh - 216px);
+}
