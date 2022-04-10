@@ -25,7 +25,7 @@ La aplicación está hecha en JavaScript usando React.
 
 ### Implementaciones
 
-- [x] Crear proyecto con React Starter Kit.
+- [x] Crear proyecto de React e instalar dependencias.
 - [x] Crear componentes y estructura HTML semántica.
 - [x] Crear formulario y variables de estado.
 - [x] Controlar eventos.
