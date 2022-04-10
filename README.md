@@ -69,7 +69,7 @@ npm install
 npm start
 ```
 
-Ir a [http://localhost:3000](http://localhost:3000) para ver la aplicación en el navegador.
+Ir a [localhost:3000](http://localhost:3000) para ver la aplicación en el navegador.
 
 ### Desplegar para entorno de producción
 
@@ -89,7 +89,7 @@ npm test
 npm run githubpages
 ```
 
-Ir a [http://localhost:3000](http://localhost:3000) para ver la aplicación en funcionamiento.
+Ir a [mararochafernandez.github.io/technical-test-guess-number](https://mararochafernandez.github.io/technical-test-guess-number/) para ver la aplicación en funcionamiento.
 
 ---
 
